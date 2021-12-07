@@ -1,0 +1,47 @@
+body {
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+  filter: drop-shadow(0 0 10px white);
+}
+
+@function random_range($min, $max) {
+  $rand: random(); /*random: 0-1사이 수를 반환함(숫자 지정시 0-지정한 수 까지)*/
+  $random_range: $min + floor($rand * (($max - $min) + 1)); /*floor: 소수점 이하 절사*/
+  @return $random_range;
+}
+
+.snow {
+  $total: 200; /*div snow 200개 만듦*/
+  position: absolute; /*div끼리 서로 겹칠 수도 있고 자유롭게 위치를 가질 수 있음*/
+  width: 10px;
+  height: 10px;
+  background-color: snow;
+  border-radius: 50%;
+
+  @for $i from 1 through $total { /*자바스크립트 for 반복문 참고, to는 '미만', through는 '이하'*/
+    $random-x: random(1000000) * 0.0001vw;
+    $random-offset: random_range(-100000, 100000) * 0.0001vw;
+    $random-x-end: $random-x + $random-offset;
+    $random-x-end-yoyo: $random-x + ($random-offset / 2);
+    $random-yoyo-time: random_range(30000, 80000) / 100000;
+    $random-yoyo-y: $random-yoyo-time * 100vh;
+    $random-scale: random(10000) * 0.0001;
+    $fall-duration: random_range(10,30) * 1s;
+    $fall-delay: random(30) * -1s;
+
+    &:nth-child(#{$i}) {
+      opacity: random(10000) * 0.0001;
+      transform: translate($random-x, -10px) scale($random-scale);
+      animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+    }
+    @keyframes fall-#{$i} {
+      #{percentage($random-yoyo-time)} {
+        transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
+      }
+      to {
+        transform: translate($random-x-end-yoyo, 100vh) scale($random-scale);
+      }
+    }
+  }
+}

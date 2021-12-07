@@ -1,25 +1,26 @@
 body {
   height: 100vh;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #ffceba 0%, #f8c2ac 100%);
   overflow: hidden;
-  filter: drop-shadow(0 0 10px white);
+
 }
 
 @function random_range($min, $max) {
-  $rand: random(); /*random: 0-1사이 수를 반환함(숫자 지정시 0-지정한 수 까지)*/
-  $random_range: $min + floor($rand * (($max - $min) + 1)); /*floor: 소수점 이하 절사*/
+  $rand: random(); //random: 0-1사이 수를 반환함(숫자 지정시 0-지정한 수 까지)
+  $random_range: $min + floor($rand * (($max - $min) + 1)); //floor: 소수점 이하 절사
   @return $random_range;
 }
 
 .snow {
-  $total: 200; /*div snow 200개 만듦*/
-  position: absolute; /*div끼리 서로 겹칠 수도 있고 자유롭게 위치를 가질 수 있음*/
+  $total: 200; //div snow 200개 만듦
+  position: absolute; //div끼리 서로 겹칠 수도 있고 자유롭게 위치를 가질 수 있음
   width: 10px;
   height: 10px;
   background-color: snow;
   border-radius: 50%;
+  filter: drop-shadow(0 0 0px snow);
 
-  @for $i from 1 through $total { /*자바스크립트 for 반복문 참고, to는 '미만', through는 '이하'*/
+  @for $i from 1 through $total { //자바스크립트 for 반복문 참고, to는 '미만', through는 '이하'
     $random-x: random(1000000) * 0.0001vw;
     $random-offset: random_range(-100000, 100000) * 0.0001vw;
     $random-x-end: $random-x + $random-offset;

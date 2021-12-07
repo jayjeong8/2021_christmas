@@ -1,6 +1,37 @@
-@import 'snow';
-
 $background-color: #000;
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
 body{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   color: $background-color;
 }
+
+.santa{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+.msg {
+  position: absolute;
+  width: 16vw;
+  height: 4vw;
+  margin: 50vh 42vw;
+}
+
+@import 'snow';
+
+
+

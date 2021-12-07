@@ -1,0 +1,16 @@
+.st0{fill:#45a545;stroke:#111111;stroke-miterlimit:10;}
+.st1{fill:#111111;stroke:#000000;stroke-miterlimit:10;}
+.st2{fill:#E42B28;stroke:#111111;stroke-miterlimit:10;}
+.st3{fill:#FFFFFF;stroke:#111111;stroke-miterlimit:10;}
+.st4{fill:#FECA74;stroke:#111111;stroke-miterlimit:10;}
+.st5{fill:#111111;}
+.st6{fill:none;stroke:#111111;stroke-miterlimit:10;}
+.st7{fill:#F4A773;stroke:#111111;stroke-miterlimit:10;}
+.st8{fill:#FECA74;}
+
+#body #face{
+    filter: drop-shadow(0 0 50px #4e5e1b);
+}
+#hand {
+    margin-top: 100px;
+}

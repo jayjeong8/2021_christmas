@@ -28,7 +28,14 @@ body{
   position: absolute;
   width: 16vw;
   height: 4vw;
-  margin: 50vh 42vw;
+  margin: 50vh 41vw;
+  font-size: 2vw;
+  text-align: left;
+  padding: 0 1vw;
+  &::placeholder{
+    text-align: center;
+    color: #45a545
+  }
 }
 @import "santa";
 @import 'snow';

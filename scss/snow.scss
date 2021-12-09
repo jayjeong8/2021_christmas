@@ -12,10 +12,10 @@ body {
 }
 
 .snow {
-  $total: 200; //div snow 200개 만듦
+  $total: 80;
   position: absolute; //div끼리 서로 겹칠 수도 있고 자유롭게 위치를 가질 수 있음
-  width: 10px;
-  height: 10px;
+  width: 2vw;
+  height: 2vw;
   background-color: snow;
   border-radius: 50%;
   filter: drop-shadow(0 0 0px snow);

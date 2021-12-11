@@ -29,6 +29,7 @@ function calcEyeIrisPosition(black, white, clientWidth, clientHeight, inputLengt
     const x = Math.cos(halfAngle * (inputLength + 8)) * eyeTrajectoryRadius * -1;
     const y = Math.sin(halfAngle * (inputLength + 8)) * eyeTrajectoryRadius - eyeTrajectoryRadius + 1;
     return {x, y};
+
 }
 
 function eyeMovingHandler(e, eyesB, eyesW, clientWidth, clientHeight) {
